@@ -12,7 +12,7 @@ public with sharing class QueueController {
 
     public List<Group> getAllQueues(){
  	
-        if(userInput==NULL || userInput=='' ){
+        if(userInput==NULLL){
 			 return [SELECT Id, Name FROM Group WHERE Type = 'Queue' ORDER BY CreatedDate LIMIT :LimitSize OFFSET :OffsetSize];
         }
         return [SELECT Id, Name FROM Group WHERE Type = 'Queue' AND Name LIKE :('%' + userInput + '%') ORDER BY CreatedDate LIMIT :LimitSize OFFSET :OffsetSize];
